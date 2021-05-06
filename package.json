@@ -1,14 +1,18 @@
 {
   "name": "open-graph-preview-validator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Validate Open Graph and X card fields against the page identity.",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "node --check bin/open-graph-preview-validator.mjs && node --check src/index.mjs",
+    "check": "npm run lint && npm test"
   },
+  "bin": { "open-graph-preview-validator": "./bin/open-graph-preview-validator.mjs" },
+  "exports": { ".": "./src/index.mjs" },
   "license": "MIT",
   "repository": {
     "type": "git",
